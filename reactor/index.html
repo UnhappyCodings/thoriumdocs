@@ -1,0 +1,1129 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../fuel/">
+      
+      
+        <link rel="next" href="../turbine/">
+      
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.3">
+    
+    
+      
+        <title>Reactor - ThoriumDocs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.79e020e9.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a5377069.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M384 96v128H256V96h128zm0 192v128H256V288h128zm-192-64H64V96h128v128zM64 288h128v128H64V288zm0-256C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h320c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1a87.983 87.983 0 0 0-40.4 74v1.5c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128h-32C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="docs/extra.css" data-md-color-accent="docs/extra.css">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#introduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="ThoriumDocs" class="md-header__button md-logo" aria-label="ThoriumDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ThoriumDocs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Reactor
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="docs/extra.css" data-md-color-accent="docs/extra.css"  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+    
+  
+</form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/UnhappyCodings/thoriumreactors" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnhappyCodings/thoriumreactors
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ores/" class="md-tabs__link">
+        
+  
+    
+  
+  Ores
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../firststeps/" class="md-tabs__link">
+        
+  
+    
+  
+  First Steps
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../recipes/" class="md-tabs__link">
+        
+  
+    
+  
+  Recipes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../machines/" class="md-tabs__link">
+        
+  
+    
+  
+  Machines
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../fuel/" class="md-tabs__link">
+        
+  
+    
+  
+  Fuel Production
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  Reactor
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../turbine/" class="md-tabs__link">
+        
+  
+    
+  
+  Turbine
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../integration/" class="md-tabs__link">
+        
+  
+    
+  
+  Integration
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="ThoriumDocs" class="md-nav__button md-logo" aria-label="ThoriumDocs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    ThoriumDocs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/UnhappyCodings/thoriumreactors" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    UnhappyCodings/thoriumreactors
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ores/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ores
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firststeps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    First Steps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recipes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recipes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../machines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Machines
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fuel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fuel Production
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reactor
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reactor
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiblock-structure" class="md-nav__link">
+    Multiblock Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiblock Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reactor" class="md-nav__link">
+    Reactor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-the-reactor" class="md-nav__link">
+    Enabling the reactor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling" class="md-nav__link">
+    Controlling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuel-it-up" class="md-nav__link">
+    Fuel it up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-startup" class="md-nav__link">
+    First startup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turbine/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Turbine
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Integration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multiblock-structure" class="md-nav__link">
+    Multiblock Structure
+  </a>
+  
+    <nav class="md-nav" aria-label="Multiblock Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reactor" class="md-nav__link">
+    Reactor
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-the-reactor" class="md-nav__link">
+    Enabling the reactor
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlling" class="md-nav__link">
+    Controlling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fuel-it-up" class="md-nav__link">
+    Fuel it up
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-startup" class="md-nav__link">
+    First startup
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Reactor</h1>
+
+<p><center></p>
+<hr>
+<p><a href="https://www.curseforge.com/minecraft/mc-mods/thorium-reactors"><img alt="Header" src="https://github.com/UnhappyCodings/thoriumreactors/raw/master/thumbnail.png" /></a></p>
+<h3 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h3>
+<p>Finally have all fueling ingredients to start your reactor? Great! <br>
+Head up to <a href="#recipes">Recipes</a> and start crafting on all needed blocks for your own reactor!</p>
+<p><br>
+<a class="md-button" href="../turbine/">Next &gt; Turbine</a>
+<br><br></p>
+<hr>
+
+<h3 id="multiblock-structure">Multiblock Structure<a class="headerlink" href="#multiblock-structure" title="Permanent link">&para;</a></h3>
+<h4 id="reactor">Reactor<a class="headerlink" href="#reactor" title="Permanent link">&para;</a></h4>
+<details class="success">
+<summary>Materials</summary>
+<p>To build a Thorium Reactor like shown below in <strong>Construction</strong>, you need the following blocks:</p>
+<p><div markdown="1" style="text-align:left;width: fit-content;">
+<strong>61x</strong> Reactor Casing <a href="../recipes/#casing">Recipe</a> <br>
+<strong>31x</strong> Reactor Glass <a href="../recipes/#glass">Recipe</a> <br>
+<strong>4x</strong> Reactor Valve <a href="../recipes/#valve">Recipe</a> <br>
+<strong>2x</strong> Graphite Moderator <a href="../recipes/#graphite-moderator">Recipe</a> <br>
+<strong>1x</strong> Reactor Rod Controller <a href="../recipes/#rod-controller">Recipe</a> <br>
+<strong>1x</strong> Reactor Controller <a href="../recipes/#controller">Recipe</a> <br>
+<strong>1x</strong> Reactor Core <a href="../recipes/#core">Recipe</a> <br>
+</div></p>
+</details>
+<details class="question">
+<summary>Construction</summary>
+<p>Click the buttons below to cycle between the construction steps!
+<img src="/img/reactor_build_1.png" id="reactor-build"></p>
+<p><button class="md-button" onClick="previousImage();"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></span> </button>
+<button class="md-button" onClick="nextImage();"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></span> </button></p>
+<p><div id="reactor_desc_1" markdown="1"> </p>
+<p><br> <em><strong>Description</strong></em> <br><br>
+Basic foundation is a 5x5 floor made out of <a href="../recipes/#casing">Reactor Casing</a>.</p>
+<p><br>
+</div></p>
+<p><div id="reactor_desc_2" hidden> </p>
+<p><br><em><strong>Description</strong></em> <br><br>
+Next you need four framing <a href="../recipes/#casing">Reactor Casing</a> one in each corner! <br>
+After that place four <a href="../recipes/#valve">Reactor Valve</a> two of them each, need to be on the opposing site of to the other two. <br>
+You'll need one <a href="../recipes/#controller">Reactor Controller</a> in one of the two sides where no valves are. <br>
+Fill every other framing block up with <a href="../recipes/#glass">Reactor Glass</a>! <br>
+Last but not least place a <a href="../recipes/#core">Reactor Core</a> in the 5x5 middle!</p>
+<p><br>
+</div></p>
+<p><div id="reactor_desc_3" hidden> </p>
+<p><br><em><strong>Description</strong></em> <br><br>
+Next you need four framing <a href="../recipes/#casing">Reactor Casing</a> one in each corner! <br>
+Place on <a href="../recipes/#moderator">Graphite Moderator</a> in the 5x5 middle! <br>
+Fill every other framing block up with <a href="../recipes/#glass">Reactor Glass</a>! <br></p>
+<p><p style="color:#d60000"> <b> Important Information! </b> <br>
+You can build this layer one to three times, this only changes the reactors height. <br>
+Production rates are not affected by that! </p></p>
+<p><br>
+</div></p>
+<p><div id="reactor_desc_4" hidden> </p>
+<p><br><em><strong>Description</strong></em> <br><br>
+Next you need four framing <a href="../recipes/#casing">Reactor Casing</a> one in each corner! <br>
+Place on <a href="../recipes/#moderator">Graphite Moderator</a> in the 5x5 middle! <br>
+Fill every other framing block up with <a href="../recipes/#glass">Reactor Glass</a>! <br></p>
+<p><p style="color:#d60000"> <b> Important Information! </b> <br>
+You can build this layer one to three times, this only changes the reactors height. <br>
+Production rates are not affected by that! </p></p>
+<p><br>
+</div></p>
+<div id="reactor_desc_5" hidden>
+<p><br><em><strong>Description</strong></em> <br><br>
+Lastly place a <a href="../recipes/#rod-controller">Rod Controller</a>, again, in the middle of the 5x5 structure. <br>
+Fill all other blocks with <a href="../recipes/#casing">Reactor Casing</a>!</p>
+<p><p style="color:#d60000"> Remember that the multiblock does not give you instant feedback when its build correctly!</p></p>
+<p><br>
+</div></p>
+</details>
+<details class="tip">
+<summary>Allowed sizes</summary>
+<p>Click the buttons below to cycle between the allowed sizes!
+<img src="/img/reactor_height_4.png" id="reactor-height"></p>
+<p><button class="md-button" onClick="previousHeightImage();"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg></span> </button>
+<button class="md-button" onClick="nextHeightImage();"> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg></span> </button></p>
+</details>
+<hr>
+
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<h4 id="enabling-the-reactor">Enabling the reactor<a class="headerlink" href="#enabling-the-reactor" title="Permanent link">&para;</a></h4>
+<div style="text-align:left;">
+<p>After you have <strong>finally</strong> built up your reactor, click on its <a href="../recipes/#controller">Reactor Controller</a> to activate the multiblock structure!
+The activation is indicated by green particles around the multiblock and the controller should have turned on!
+Otherwise check your structure again if its fits the conditions in <a href="#multiblock-structure">Multiblock Structure</a>.</p>
+</div>
+<p><br></p>
+<h4 id="controlling">Controlling<a class="headerlink" href="#controlling" title="Permanent link">&para;</a></h4>
+<div style="text-align:left;">
+<p>Finally you can open your <strong>reactor interface</strong> by clicking on the <strong>controller</strong> again! <br>
+Here you can see all future statistics for your reactor and turbine as temp, fuel, status, time, speed, generation and much more! <br>
+Dont forget to open the left and right side to get all types of information!</p>
+</div>
+<p><br></p>
+<h4 id="fuel-it-up">Fuel it up<a class="headerlink" href="#fuel-it-up" title="Permanent link">&para;</a></h4>
+<div style="text-align:left;">
+<p>To <strong>fuel up your reactor</strong> in any way (item, fluid) you will need to configure the <strong>reactor valves</strong>. <br>
+For that, equip your <a href="../recipes/#configurator">Configurator</a> and right-click on the <strong>valves</strong> to set them to your desired mode. <br>
+Use some kind of <strong>pipes/cables</strong> to firstly fuel your <strong>molten salt</strong> though the <strong>Fluid Input</strong> valve mode in the reactor! <br>
+Any size of reactor does atleast need <strong>8.000mB</strong> of <strong>molten salt</strong> to not end up in a scram shutdown!</p>
+<p>After that, fuel it up with <strong>enriched uranium</strong> through the <strong>Item Input</strong> valve mode. <br>
+For that you need to open the <strong>reactor interface</strong> and change the <strong>FUEL LOAD</strong> value and confirm it with <strong>SET</strong>. <br>
+You will see that the <strong>in the valves stored</strong> enriched uranium will be <strong>consumed</strong> by the reactor. <br>
+The rod grid in the <strong>interface</strong> should come up in <strong>green</strong> after some time!</p>
+<p>Its <strong><em>very important</em></strong> that you fill up the reactor with atleast 8.000mB <strong>molten salt</strong> before you fuel it with <strong>enriched uranium</strong>! <br>
+Otherwise the <strong>massive chain reaction</strong> will emit <strong>huge amounts of radiation</strong>!</p>
+</div>
+<p><br></p>
+<h4 id="first-startup">First startup<a class="headerlink" href="#first-startup" title="Permanent link">&para;</a></h4>
+<div style="text-align:left;">
+<p>After you have <strong>filled up the reactor</strong> with <strong>molten salt</strong> and fueled it with <strong>enriched uranium</strong>, try a startup!
+Increase your <strong>ROD INSERT</strong> value depending on your <strong>fuel level</strong>. For the first run set it to some <strong>save/secure</strong> value, e.g. 70%.
+This will make sure, that the <strong>reactor</strong> will run at <strong>30%</strong> of its current maximum capability!</p>
+<p>Its important that you pay attention to the <strong>Reactor Load</strong> value after you started the reactor, <br>
+it should stay at or <strong>under 100%</strong>. When reaching states <strong>over 105% it gets damaged</strong>! <br>
+Damaging a reactor is obviously a bad idea, don't do it! Don't try it! <strong>Never!</strong> <br>
+Its decreasing the <strong>reachable temperature</strong>, <strong>fluid conversion rate</strong>, and even lets <strong>radiation escape</strong>. <br>
+A damaged reactor <strong>cannot</strong> be repaired! Luckily, a thorium reactor <strong>cannot</strong> explode!</p>
+<p>Now simply click on <strong>START</strong> to activate the reactors physical chain reaction. <br>
+The reactor will now heat up to its maximum temperature defined by the current configuration! <br>
+Now you can modify the <strong>Reactor Load</strong> value to savely bring it to 100%. Remember that more uranium means more heat! <br>
+When it's heated up, switch from <strong>START</strong> to <strong>RUN</strong>! This change will let the reactor <strong>heat up</strong> the before fueled <strong>molten salt</strong> into its <strong>heated form</strong>. <br>
+The rate of that transformation is set at <strong>1mB</strong> per 50°C each tick (1 sec = 20 ticks) beginning at <strong>101°C with 2mB</strong>. So e.g. the reactor will generate <strong>20mB/t at 1000°C</strong>!</p>
+<p>Secondary, a <strong>depleted uranium</strong> pellet is being spit out <strong>each 12 hours</strong> of active reactor <strong>running</strong> time!
+Make sure, that such <strong>can be extracted</strong> though valves in <strong>Item Output</strong> mode. <br>
+Otherwise the <strong>molten salt conversion</strong> and temperature are decreasing drastically! <br>
+Pump out the heated molten salt through a valve in <strong>Fluid Output</strong> mode.</p>
+<p>Always keep an eye on your reactor load! <strong>Alarm sounds</strong> appear when it gets too high or its scrammed!</p>
+<p><strong>Changes to this text may apply! As of 03.10.2023.</strong></p>
+</div>
+<p><br></p>
+<hr>
+
+<script>
+
+  function nextHeightImage() {
+    let element = document.getElementById("reactor-height");
+    let src = element.src;
+    let nextInt = parseInt(src.split("height_")[1].split(".")[0]) + 1;
+    if (nextInt <= 6) {
+      element.src = "/img/reactor_height_" + nextInt + ".png";
+    }
+  }
+
+  function previousHeightImage() {
+    let element = document.getElementById("reactor-height");
+    let src = element.src;
+    let nextInt = parseInt(src.split("height_")[1].split(".")[0]) - 1;
+    if (nextInt >= 4) {
+      element.src = "/img/reactor_height_" + nextInt + ".png";
+    }
+  }
+
+  function nextImage() {
+    let element = document.getElementById("reactor-build");
+    let src = element.src;
+    let nextInt = parseInt(src.split("build_")[1].split(".")[0]) + 1;
+    if (nextInt <= 5) {
+      document.getElementById("reactor_desc_" + nextInt).hidden = false;
+      document.getElementById("reactor_desc_" + (nextInt - 1)).hidden = true;
+      element.src = "/img/reactor_build_" + nextInt + ".png";
+    }
+  }
+
+  function previousImage() {
+    let element = document.getElementById("reactor-build");
+    let src = element.src;
+    let nextInt = parseInt(src.split("build_")[1].split(".")[0]) - 1;
+    if (nextInt >= 1) {
+      document.getElementById("reactor_desc_" + nextInt).hidden = false;
+      document.getElementById("reactor_desc_" + (nextInt + 1)).hidden = true;
+      element.src = "/img/reactor_build_" + nextInt + ".png";
+    }
+  }
+
+</script>
+
+
+
+  
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../fuel/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Fuel Production">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Fuel Production
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../turbine/" class="md-footer__link md-footer__link--next" aria-label="Next: Turbine">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Turbine
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2023 <a href="https://github.com/unhappycodings/" target="_blank">UnhappyWithoutU</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.intelligence-modding.de/" target="_blank" rel="noopener" title="discord.intelligence-modding.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418Z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UC9k82vSEkI5WxuqhGnyRzfQ" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/unhappycodings/" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://curseforge.com/members/unhappywithoutu/" target="_blank" rel="noopener" title="curseforge.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.326 9.214s4.9-.772 5.674-3.026h-7.507V4.4H0l2.032 2.358v2.415s5.127-.267 7.11 1.237c2.714 2.516-3.053 5.917-3.053 5.917l-.99 3.273c1.547-1.473 4.494-3.377 9.899-3.286-2.057.65-4.125 1.665-5.735 3.286h10.925l-1.029-3.273s-7.918-4.668-.833-7.112z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.follow", "navigation.tracking", "navigation.top", "navigation.indexes", "navigation.tabs", "navigation.footer", "content.code.annotate", "content.code.copy"], "search": "../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6eac0284.min.js"></script>
+      
+    
+  </body>
+</html>
