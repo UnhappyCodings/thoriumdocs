@@ -888,9 +888,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getfuelrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getFuelRodStatusMap()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getdepletedfuelrodstatus" class="md-nav__link">
     <span class="md-ellipsis">
       getDepletedFuelRodStatus()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdepletedfuelrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getDepletedFuelRodStatusMap()
     </span>
   </a>
   
@@ -906,9 +924,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcurrentcontrolrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getCurrentControlRodStatusMap()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gettargetcontrolrodstatus" class="md-nav__link">
     <span class="md-ellipsis">
       getTargetControlRodStatus()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettargetcontrolrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getTargetControlRodStatusMap()
     </span>
   </a>
   
@@ -1351,9 +1387,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getfuelrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getFuelRodStatusMap()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#getdepletedfuelrodstatus" class="md-nav__link">
     <span class="md-ellipsis">
       getDepletedFuelRodStatus()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getdepletedfuelrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getDepletedFuelRodStatusMap()
     </span>
   </a>
   
@@ -1369,9 +1423,27 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#getcurrentcontrolrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getCurrentControlRodStatusMap()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#gettargetcontrolrodstatus" class="md-nav__link">
     <span class="md-ellipsis">
       getTargetControlRodStatus()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gettargetcontrolrodstatusmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      getTargetControlRodStatusMap()
     </span>
   </a>
   
@@ -2079,14 +2151,31 @@ For example when the reactor gets scrammed!</p>
 
 <span class="n">index</span><span class="p">:</span> <span class="mi">0</span> <span class="o">-</span> <span class="mi">63</span>
 </code></pre></div>
+<hr>
+
+<h3 id="getfuelrodstatusmap"><strong><em>getFuelRodStatusMap()</em></strong><a class="headerlink" href="#getfuelrodstatusmap" title="Permanent link">&para;</a></h3>
+<h5> Description </h5>
+
+<p>Returns the fuel level of the given fuel rod in percent in a lua table!</p>
+<h5> Method </h5>
+
+<div class="highlight"><pre><span></span><code><span class="n">getFuelRodStatusMap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Int</span>
+</code></pre></div>
 <h5> Example </h5>
 
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">example.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">reactor</span> <span class="o">=</span> <span class="n">peripheral</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;thorium_reactor&quot;</span><span class="p">)</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">reactor</span> <span class="o">=</span> <span class="n">peripheral</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;thorium_reactor&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fuel #31: &quot;</span> <span class="o">..</span> <span class="n">toString</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getFuelRodStatus</span><span class="p">(</span><span class="mi">31</span><span class="p">))</span> <span class="o">..</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
+<span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getFuelRodStatusMap</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fuel #: &quot;</span> <span class="o">..</span> <span class="n">k</span> <span class="o">..</span> <span class="s2">&quot; has &quot;</span> <span class="o">..</span> <span class="n">v</span> <span class="o">..</span> <span class="s2">&quot;% fuel&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
 </code></pre></div></td></tr></table></div>
+<h5> Added In </h5>
+
+<p>ThoriumReactors version 0.2b</p>
 <hr>
 
 <h3 id="getdepletedfuelrodstatus"><strong><em>getDepletedFuelRodStatus()</em></strong><a class="headerlink" href="#getdepletedfuelrodstatus" title="Permanent link">&para;</a></h3>
@@ -2109,6 +2198,31 @@ For example when the reactor gets scrammed!</p>
 </code></pre></div></td></tr></table></div>
 <hr>
 
+<h3 id="getdepletedfuelrodstatusmap"><strong><em>getDepletedFuelRodStatusMap()</em></strong><a class="headerlink" href="#getdepletedfuelrodstatusmap" title="Permanent link">&para;</a></h3>
+<h5> Description </h5>
+
+<p>Returns the depleted fuel level of the given fuel rod in percent in a lua table!</p>
+<h5> Method </h5>
+
+<div class="highlight"><pre><span></span><code><span class="n">getDepletedFuelRodStatusMap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Int</span>
+</code></pre></div>
+<h5> Example </h5>
+
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">example.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">reactor</span> <span class="o">=</span> <span class="n">peripheral</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;thorium_reactor&quot;</span><span class="p">)</span>
+
+<span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getDepletedFuelRodStatusMap</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Fuel #: &quot;</span> <span class="o">..</span> <span class="n">k</span> <span class="o">..</span> <span class="s2">&quot; has &quot;</span> <span class="o">..</span> <span class="n">v</span> <span class="o">..</span> <span class="s2">&quot;% depleted fuel&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></td></tr></table></div>
+<h5> Added In </h5>
+
+<p>ThoriumReactors version 0.2b</p>
+<hr>
+
 <h3 id="getcurrentcontrolrodstatus"><strong><em>getCurrentControlRodStatus()</em></strong><a class="headerlink" href="#getcurrentcontrolrodstatus" title="Permanent link">&para;</a></h3>
 <h5> Description </h5>
 
@@ -2129,6 +2243,31 @@ For example when the reactor gets scrammed!</p>
 </code></pre></div></td></tr></table></div>
 <hr>
 
+<h3 id="getcurrentcontrolrodstatusmap"><strong><em>getCurrentControlRodStatusMap()</em></strong><a class="headerlink" href="#getcurrentcontrolrodstatusmap" title="Permanent link">&para;</a></h3>
+<h5> Description </h5>
+
+<p>Returns the depleted fuel level of the given fuel rod in percent in a lua table!</p>
+<h5> Method </h5>
+
+<div class="highlight"><pre><span></span><code><span class="n">getCurrentControlRodStatusMap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Int</span>
+</code></pre></div>
+<h5> Example </h5>
+
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">example.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">reactor</span> <span class="o">=</span> <span class="n">peripheral</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;thorium_reactor&quot;</span><span class="p">)</span>
+
+<span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getCurrentControlRodStatusMap</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rod #: &quot;</span> <span class="o">..</span> <span class="n">k</span> <span class="o">..</span> <span class="s2">&quot; is &quot;</span> <span class="o">..</span> <span class="n">v</span> <span class="o">..</span> <span class="s2">&quot;% inserted&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></td></tr></table></div>
+<h5> Added In </h5>
+
+<p>ThoriumReactors version 0.2b</p>
+<hr>
+
 <h3 id="gettargetcontrolrodstatus"><strong><em>getTargetControlRodStatus()</em></strong><a class="headerlink" href="#gettargetcontrolrodstatus" title="Permanent link">&para;</a></h3>
 <h5> Description </h5>
 
@@ -2147,6 +2286,31 @@ For example when the reactor gets scrammed!</p>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Control #70: &quot;</span> <span class="o">..</span> <span class="n">toString</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getTargetControlRodStatus</span><span class="p">(</span><span class="mi">70</span><span class="p">))</span> <span class="o">..</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
+<hr>
+
+<h3 id="gettargetcontrolrodstatusmap"><strong><em>getTargetControlRodStatusMap()</em></strong><a class="headerlink" href="#gettargetcontrolrodstatusmap" title="Permanent link">&para;</a></h3>
+<h5> Description </h5>
+
+<p>Returns the depleted fuel level of the given fuel rod in percent in a lua table! <br></p>
+<h5> Method </h5>
+
+<div class="highlight"><pre><span></span><code><span class="n">getTargetControlRodStatusMap</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Table</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">Int</span>
+</code></pre></div>
+<h5> Example </h5>
+
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">example.lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">local</span> <span class="n">reactor</span> <span class="o">=</span> <span class="n">peripheral</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;thorium_reactor&quot;</span><span class="p">)</span>
+
+<span class="kr">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="kr">in</span> <span class="nb">pairs</span><span class="p">(</span><span class="n">reactor</span><span class="p">.</span><span class="n">getTargetControlRodStatusMap</span><span class="p">())</span> <span class="kr">do</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rod #: &quot;</span> <span class="o">..</span> <span class="n">k</span> <span class="o">..</span> <span class="s2">&quot; will be &quot;</span> <span class="o">..</span> <span class="n">v</span> <span class="o">..</span> <span class="s2">&quot;% inserted&quot;</span><span class="p">)</span>
+<span class="kr">end</span>
+</code></pre></div></td></tr></table></div>
+<h5> Added In </h5>
+
+<p>ThoriumReactors version 0.2b</p>
 <hr>
 
 <h3 id="settargetcontrolrodstatus"><strong><em>setTargetControlRodStatus()</em></strong><a class="headerlink" href="#settargetcontrolrodstatus" title="Permanent link">&para;</a></h3>
